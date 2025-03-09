@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100;200;300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
+  50% { box-shadow: 0 0 10px rgba(255,255,255,0.7), 0 0 20px rgba(255,255,255,0.5); }
+  100% { box-shadow: 0 0 5px rgba(255,255,255,0.5), 0 0 10px rgba(255,255,255,0.3); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes pulsate {
+  0% {
+    text-shadow: 0 0 4px #fff,
+                 0 0 11px #fff,
+                 0 0 19px #fff,
+                 0 0 40px #0fa,
+                 0 0 80px #0fa,
+                 0 0 90px #0fa,
+                 0 0 100px #0fa,
+                 0 0 150px #0fa;
+  }
+  50% {
+    text-shadow: 0 0 4px #fff,
+                 0 0 10px #fff,
+                 0 0 18px #fff,
+                 0 0 38px #0fa,
+                 0 0 73px #0fa,
+                 0 0 80px #0fa,
+                 0 0 94px #0fa,
+                 0 0 140px #0fa;
+  }
+  100% {
+    text-shadow: 0 0 4px #fff,
+                 0 0 11px #fff,
+                 0 0 19px #fff,
+                 0 0 40px #0fa,
+                 0 0 80px #0fa,
+                 0 0 90px #0fa,
+                 0 0 100px #0fa,
+                 0 0 150px #0fa;
+  }
+}
+
+.header-text {
+  display: inline-block;
+  font-size: inherit;
+  color: white;
+  text-shadow: 0 0 10px rgba(255,255,255,0.5);
+  transition: transform 0.2s ease-out;
+  will-change: transform;
+}
+
+@media (max-width: 992px) {
+  .header-text {
+    transform: none !important;
+  }
+}
+
+.glow-effect {
+  animation: glow 3s infinite;
+}
+
+.float-effect {
+  animation: float 6s ease-in-out infinite;
+}
+
+.pulsate-text {
+  animation: pulsate 2s infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(45deg, #ffffff, #a1a1aa);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
